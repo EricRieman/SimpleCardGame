@@ -5,12 +5,14 @@ using System;
 
 public class DeckCreator : MonoBehaviour
 {
+   public Player[] players;
    public Card[] deck;
    const int deckSize = 60;
 
    private void Start()
    {
-
+      BuildPlayers();
+      BuildDecks();
    }
 
    private void Update()
@@ -18,7 +20,7 @@ public class DeckCreator : MonoBehaviour
 
    }
 
-   private void BuildDeck()
+   private void BuildDecks()
    {
       deck = new Card[ deckSize ];
 
@@ -35,6 +37,22 @@ public class DeckCreator : MonoBehaviour
          card.stats.right = 10;
 
          deck[ i ] = card;
+      }
+   }
+
+   private void BuildPlayers()
+   {
+      players = new Player[ 2 ];
+
+      Card[] tempHand = new Card[0];
+
+      for (int i = 0; i < players.Length; i++ )
+      {
+         Player p = new Player();
+         p.hand = tempHand;
+         p.index = i;
+         p.userName = "Player " + 1;
+         players[ i ] = p;
       }
    }
 }
@@ -86,4 +104,10 @@ public class Card
    }
 }
 
-
+[Serializable]
+public class Player
+{
+   public Card[] hand;
+   public int index;
+   public string userName;
+}
