@@ -1,33 +1,30 @@
-using UnityEngine;
 using Card;
+using Deck;
 
-public class DeckCreator : MonoBehaviour
+namespace DeckManager
 {
-   public DuelCard[] deck;
-   const int deckSize = 60;
-
-   private void Start()
+   public class DeckCreator
    {
-      BuildDecks();
-   }
+      
+      const int deckSize = 60;
+      public DuelDeck deck;
 
-   private void BuildDecks()
-   {
-      deck = new DuelCard[ deckSize ];
-
-      for ( int i = 0; i < deckSize; i++ )
+      public DeckCreator()
       {
-         DuelCard card = new DuelCard();
-         card.name = i.ToString();
-         card.alignment = DuelCard.Alignment.Jupiter;
-         card.type = DuelCard.Type.Cosmic;
-         card.rarity = DuelCard.Rarity.Silver;
-         card.stats.top = 10;
-         card.stats.bottom = 10;
-         card.stats.left = 10;
-         card.stats.right = 10;
+         for (int i = 0; i < deckSize; i++)
+         {
+            DuelCard card = new DuelCard();
+            card.name = i.ToString();
+            card.alignment = DuelCard.Alignment.Jupiter;
+            card.type = DuelCard.Type.Cosmic;
+            card.rarity = DuelCard.Rarity.Silver;
+            card.stats.top = 10;
+            card.stats.bottom = 10;
+            card.stats.left = 10;
+            card.stats.right = 10;
 
-         deck[ i ] = card;
+            deck.deck.Add(card);
+         }
       }
    }
 }

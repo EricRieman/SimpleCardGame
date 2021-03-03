@@ -1,29 +1,33 @@
-﻿using UnityEngine;
-using Player;
-using Card;
+﻿using Player;
+using Hand;
+using System.Collections.Generic;
 
-public class PlayersCreator : MonoBehaviour
+namespace PlayerManager
 {
-   public DuelPlayer[] players;
-
-   void Start()
+   public class PlayersCreator
    {
-      BuildPlayers();
-   }
+      public List<DuelPlayer> players;
 
-   private void BuildPlayers()
-   {
-      players = new DuelPlayer[ 2 ];
-
-      DuelCard[] tempHand = new DuelCard[0];
-
-      for ( int i = 0; i < players.Length; i++ )
+      public PlayersCreator( int numPlayers )
       {
-         DuelPlayer p = new DuelPlayer();
-         //p.hand = tempHand;
-         p.index = i;
-         p.userName = "Player " + 1;
-         players[ i ] = p;
+         BuildPlayers(numPlayers);
+      }
+
+      private void BuildPlayers(int numPlayers)
+      {
+
+         // Deack creator here. Add method to remove top 7 to initlize Dual
+         DuelHand hand = new DuelHand();
+
+         for( int i = 0; i < numPlayers; i++)
+         { 
+            DuelPlayer p = new DuelPlayer();
+
+            p.hand = hand;
+            p.index = i;
+            p.userName = "Player " + 1;
+            players.Add( p );
+         }
       }
    }
 }

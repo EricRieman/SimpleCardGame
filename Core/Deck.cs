@@ -1,14 +1,12 @@
 ﻿using System;
 using Card;
+using System.Collections.Generic;
 
 namespace Deck
 {
    [Serializable]
-   public struct Deck
+   public struct DuelDeck
    {
-      public DuelCard[] deck;
-
-      public int size;
-      public int graveyardSize;
+      public List< DuelCard > deck;
    }
 }

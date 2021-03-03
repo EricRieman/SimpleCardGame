@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
+using PlayerManager;
 
 public class Core : MonoBehaviour
 {
-    private void Start()
-    {
-        // Create players
+   public int numPlayer = 2;
 
-        // create decks
-        
-        // deal hands
-        
-        // begin game state?
+   private void Start()
+   {
+      PlayersCreator playerCreator = new PlayersCreator( numPlayer );
+
+      // draw hands
+
+      // begin game state?
    }
 }
