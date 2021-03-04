@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Card
+namespace CardNS
 {
    [Serializable]
-   public struct DuelCard
+   public struct Card
    {
       public string name;
       public Alignment alignment;

@@ -1,14 +1,14 @@
-﻿using UnityEngine;
-using Player;
-using Card;
+﻿using CardListManagerNS;
 
 namespace HandManager
 {
-   public class HandCreator
+   public class HandCreator : CardListManager
    {
       public HandCreator()
       {
 
       }
+
+
    }
 }

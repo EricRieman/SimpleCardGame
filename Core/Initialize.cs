@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using PlayerManager;
+using PlayerManagerNS;
+using PlayerNS;
 
 public class Core : MonoBehaviour
 {
@@ -7,10 +8,25 @@ public class Core : MonoBehaviour
 
    private void Start()
    {
-      PlayersCreator playerCreator = new PlayersCreator( numPlayer );
+      PlayerManager playerManager = new PlayerManager( GetPlayerInfo() );
 
-      // draw hands
 
       // begin game state?
+   }
+
+   private PlayerInfo[] GetPlayerInfo()
+   {
+      PlayerInfo[] allInfo = new PlayerInfo[2];
+
+      PlayerInfo info = new PlayerInfo();
+      info.userName = "Name1";
+      info.initiative = 0;
+      allInfo[0] = info;
+
+      info.userName = "Name2";
+      info.initiative = 1;
+      allInfo[1] = info;
+
+      return allInfo;
    }
 }
