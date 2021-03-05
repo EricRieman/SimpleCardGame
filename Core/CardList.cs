@@ -5,7 +5,7 @@ namespace CardListNS
 {
    public class CardList
    {
-      private List< Card > cards;
+      public List< Card > cards = new List< Card >();
 
       protected void InsertCard( Card card )
       {
