@@ -1,2 +1,5 @@
 # Ignore Unity's meta data files
 *.meta
+.vs
+/obj
+/Temp
