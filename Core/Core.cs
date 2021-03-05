@@ -25,9 +25,9 @@ public class Core : MonoBehaviour
       {
          Player p = new Player();
 
-         p.Deck       = new Deck();
-         p.Hand       = p.DrawHand();
-         p.Graveyard  = new Graveyard();
+         p.deck       = new Deck();
+         p.hand       = p.DrawHand();
+         p.graveyard  = new Graveyard();
          p.initiative = allInfo[ i ].initiative;
          p.userName   = allInfo[ i ].userName;
 

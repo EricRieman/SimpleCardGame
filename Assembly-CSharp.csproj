@@ -671,7 +671,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CardController.cs" />
-    <Compile Include="Core\Initialize.cs" />
+    <Compile Include="Core\Core.cs" />
     <Compile Include="Core\Card.cs" />
     <Compile Include="Core\CardList.cs" />
     <Compile Include="Core\Deck.cs" />
@@ -679,9 +679,7 @@
     <Compile Include="Core\Hand.cs" />
     <Compile Include="Core\Player.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Serializables\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
