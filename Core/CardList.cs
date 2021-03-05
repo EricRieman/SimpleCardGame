@@ -7,12 +7,12 @@ namespace CardListNS
    {
       private List< Card > cards;
 
-      public void InsertCard( Card card )
+      protected void InsertCard( Card card )
       {
          cards.Add( card );
       }
 
-      public Card PopCard( int pos )
+      protected Card PopCard( int pos )
       {
          //could put a safety check in here
          Card c = cards[ pos ];
