@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CardController : MonoBehaviour
 {
-   [SerializeField] private GameObject Card_Back;
+   [SerializeField] private GameObject CardBack;
 
    public void OnMouseDown()
    {
-      if ( Card_Back.activeSelf )
-         Card_Back.SetActive( false );
+      if ( CardBack.activeSelf )
+         CardBack.SetActive( false );
    }
 }

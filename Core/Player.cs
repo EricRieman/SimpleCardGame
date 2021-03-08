@@ -1,6 +1,7 @@
 ﻿using System;
 using HandNS;
 using DeckNS;
+using CardNS;
 using GraveyardNS;
 
 namespace PlayerNS
@@ -12,9 +13,14 @@ namespace PlayerNS
       public Deck deck;
       public Graveyard graveyard;
 
-      public Hand DrawHand()
+      public Player ( PlayerInfo info )
       {
-         return deck.DrawHand();
+         deck = new Deck();
+         hand = deck.DrawHand();
+         graveyard = new Graveyard();
+
+         userName = info.userName;
+         initiative = info.initiative;
       }
    }
 

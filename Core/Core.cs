@@ -1,53 +1,40 @@
 ﻿using UnityEngine;
 using PlayerNS;
-using DeckNS;
-using GraveyardNS;
+using BoardNS;
 using System.Collections.Generic;
 
 public class Core : MonoBehaviour
 {
-   public int numPlayer = 2;
-
    public List<Player> players;
+   public Board board;
 
    private void Start()
    {
       CreatePlayers();
-
-      // begin game state?
    }
 
    private void CreatePlayers()
    {
-      PlayerInfo[] allInfo = GetPlayerInfo();
-
-      for ( int i = 0; i < allInfo.Length; i++ )
-      {
-         Player p = new Player();
-
-         p.deck       = new Deck();
-         p.hand       = p.DrawHand();
-         p.graveyard  = new Graveyard();
-         p.initiative = allInfo[ i ].initiative;
-         p.userName   = allInfo[ i ].userName;
-
-         players.Add( p );
-      }
+      List<PlayerInfo> allInfo = GetPlayerInfo();
+   
+      for ( int i = 0; i < allInfo.Count; i++ )
+         players.Add( new Player( allInfo[ i ] ) );
    }
-
-   private PlayerInfo[] GetPlayerInfo()
+   
+   private List<PlayerInfo> GetPlayerInfo()
    {
-      PlayerInfo[] allInfo = new PlayerInfo[2];
+      List<PlayerInfo> allInfo = new List<PlayerInfo>();
+
       PlayerInfo info = new PlayerInfo();
 
       info.userName   = "Name1";
       info.initiative = 0;
-      allInfo[0]      = info;
+      allInfo.Add( info );
 
       info.userName   = "Name2";
       info.initiative = 1;
-      allInfo[1]      = info;
-
+      allInfo.Add( info );
+   
       return allInfo;
    }
 }

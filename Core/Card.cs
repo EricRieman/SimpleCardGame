@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace CardNS
 {
@@ -47,6 +48,14 @@ namespace CardNS
          public int bottom;
          public int right;
       }
+   }
+
+   public class EmptyCard
+   {
+      public static Card card = new Card();
+      public static string EmptyCardStr = "Empty";
+
+      EmptyCard() { card.name = EmptyCardStr; }
    }
 }
 

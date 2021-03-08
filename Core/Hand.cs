@@ -12,6 +12,9 @@ namespace HandNS
          InsertCard( card );
       }
 
-      // play card
+      public Card PlayCard( int index )
+      {
+         return PopCard( index );
+      }
    }
 }

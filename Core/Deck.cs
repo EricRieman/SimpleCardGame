@@ -16,14 +16,14 @@ namespace DeckNS
          for ( int i = 0; i < deckSize; i++ )
          {
             Card card         = new Card();
-            card.name = i.ToString();
-            card.alignment = Card.Alignment.Jupiter;
-            card.type = Card.Type.Cosmic;
-            card.rarity = Card.Rarity.Silver;
-            card.stats.top = 10;
+            card.name         = i.ToString();
+            card.alignment    = Card.Alignment.Jupiter;
+            card.type         = Card.Type.Cosmic;
+            card.rarity       = Card.Rarity.Silver;
+            card.stats.top    = 10;
             card.stats.bottom = 10;
-            card.stats.left = 10;
-            card.stats.right = 10;
+            card.stats.left   = 10;
+            card.stats.right  = 10;
 
             InsertCard( card );
          }
