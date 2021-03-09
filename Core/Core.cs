@@ -2,11 +2,12 @@
 using PlayerNS;
 using BoardNS;
 using System.Collections.Generic;
+using System;
 
 public class Core : MonoBehaviour
 {
    public List<Player> players;
-   public Board board;
+   //public Board board;
 
    private void Start()
    {

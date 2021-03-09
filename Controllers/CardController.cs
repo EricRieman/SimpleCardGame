@@ -4,9 +4,13 @@ public class CardController : MonoBehaviour
 {
    [SerializeField] private GameObject CardBack;
 
-   public void OnMouseDown()
+   private void OnMouseDown()
    {
-      if ( CardBack.activeSelf )
-         CardBack.SetActive( false );
+      FlipCard();
+   }
+
+   public void FlipCard()
+   {
+      CardBack.SetActive( !CardBack.activeSelf );
    }
 }
