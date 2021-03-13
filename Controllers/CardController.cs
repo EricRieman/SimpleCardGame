@@ -2,34 +2,30 @@
 
 public class CardController : MonoBehaviour
 {
-   public Quaternion start;
-   public float lerpTime = 1;
-
-//   private void OnMouseDown()
-//   {
-//      FlipCard();
-//   }
-//
-//   public void FlipCard()
-//   {
-//      //CardBack.SetActive( !CardBack.activeSelf );
-//
-//      for ( float i = 0; i <=180; i+= 10 )
-//      {
-//         transform.rotation = Quaternion.Euler( 0, i, 0 );
-//      }
-//
-//
-//   }
-
-   void Start()
-   {
-      start = transform.rotation;
-   }
+   bool flipped = false;
+   bool moved = false;
 
    void Update()
    {
-      //transform.rotation = Quaternion.Lerp( transform.rotation, start, Time.deltaTime * lerpTime );
-      transform.Rotate( Vector3.up );
+      FlipCard();
+   }
+
+   void FlipCard()
+   {
+      if ( !flipped )
+      {
+         transform.Rotate( new Vector3( 0, 200, 0 ) * Time.deltaTime );
+         flipped = transform.localRotation.y >= 0.98;
+         if ( flipped )
+            transform.localRotation = new Quaternion( 0.0f, 1.0f, 0.0f, 0.0f );
+      }
+   }
+
+   void MoveCard()
+   {
+      if ( !moved )
+      {
+         //move card
+      }
    }
 }
